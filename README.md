@@ -21,4 +21,10 @@
 | 1/10th スケール |
 | ベース車両は、TAMIYA社　TT-02|
 
+## チュートリアル
 
+動画チュートリアル
+- [1.PWMの設定](https://www.youtube.com/watch?v=n5FJrSu17x0)
+- [2.アノテーションと学習](https://www.youtube.com/watch?v=gz_bV-wJAO0&t=7s)
+- [3.TensorRTへの変換](https://www.youtube.com/watch?v=zbNoygm1JSQ)
+- [4.自動走行](https://www.youtube.com/watch?v=YQ8U5KHhLLA)
