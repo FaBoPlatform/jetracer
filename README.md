@@ -12,6 +12,10 @@
 
 などが挙げられます。
 
+## デモ走行
+
+
+[![youtube](https://img.youtube.com/vi/Rbr38xTfuqY/default.jpg)](https://www.youtube.com/watch?v=Rbr38xTfuqY)
 
 ## 車体
 
