@@ -15,7 +15,7 @@
 
 ## 車体
 
-|  FaBo JetRacer Kit |
+|  [FaBo JetRacer Kit](https://fabo.store/collections/jetracer) |
 |--------------|
 | <img src="https://faboplatform.github.io/JetracerDocs/img/jetracer1.jpg" width=256>  | 
 | 1/10th スケール |
