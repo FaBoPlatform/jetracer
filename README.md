@@ -35,4 +35,4 @@
 ## SDカードイメージ
 
 - [FaBo JetRacer Kit 1.0 for Jetpack4.6.1](https://drive.google.com/file/d/1tZ5bNfE9gJ67E_HGm_hXMXGRFWvKaoTe/view?usp=sharing)
-- [FaBo JetRacer Kit 1.0 for Jetpack4.5.1](https://drive.google.com/file/d/1-MvsHPYKcunSOiaXaXR15DQP6QMJJhEm/view?usp=sharing9
+- [FaBo JetRacer Kit 1.0 for Jetpack4.5.1](https://drive.google.com/file/d/1-MvsHPYKcunSOiaXaXR15DQP6QMJJhEm/view?usp=sharing)
