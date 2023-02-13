@@ -12,11 +12,6 @@
 
 などが挙げられます。
 
-## デモ走行
-
-
-[![youtube](https://img.youtube.com/vi/Rbr38xTfuqY/default.jpg)](https://www.youtube.com/watch?v=Rbr38xTfuqY)
-
 ## 車体
 
 |  [FaBo JetRacer Kit](https://fabo.store/collections/jetracer) |
@@ -35,6 +30,11 @@
 - [2.アノテーションと学習](https://www.youtube.com/watch?v=gz_bV-wJAO0&t=7s)
 - [3.TensorRTへの変換](https://www.youtube.com/watch?v=zbNoygm1JSQ)
 - [4.自動走行](https://www.youtube.com/watch?v=YQ8U5KHhLLA)
+
+## デモ走行
+
+[![youtube](https://img.youtube.com/vi/Rbr38xTfuqY/default.jpg)](https://www.youtube.com/watch?v=Rbr38xTfuqY)
+
 
 ## SDカードイメージ
 
