@@ -23,8 +23,16 @@
 
 ## チュートリアル
 
+ドキュメント
+- [FaBo JetRacer Docs](https://faboplatform.github.io/JetracerDocs/)
+
 動画チュートリアル
 - [1.PWMの設定](https://www.youtube.com/watch?v=n5FJrSu17x0)
 - [2.アノテーションと学習](https://www.youtube.com/watch?v=gz_bV-wJAO0&t=7s)
 - [3.TensorRTへの変換](https://www.youtube.com/watch?v=zbNoygm1JSQ)
 - [4.自動走行](https://www.youtube.com/watch?v=YQ8U5KHhLLA)
+
+## SDカードイメージ
+
+- [FaBo JetRacer Kit 1.0 for Jetpack4.6.1](https://drive.google.com/file/d/1tZ5bNfE9gJ67E_HGm_hXMXGRFWvKaoTe/view?usp=sharing)
+- [FaBo JetRacer Kit 1.0 for Jetpack4.5.1](https://drive.google.com/file/d/1-MvsHPYKcunSOiaXaXR15DQP6QMJJhEm/view?usp=sharing9
