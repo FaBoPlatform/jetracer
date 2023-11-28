@@ -40,6 +40,9 @@
 自動運転ミニカーバトル 2023<br>
 [![youtube](https://img.youtube.com/vi/DJxsbYfvvCg/default.jpg)](https://www.youtube.com/watch?v=DJxsbYfvvCg)
 
+自動運転ミニカーバトル 2023で使用したデータセットと学習済みモデル<br>
+[Google Driveからダウンロード](https://drive.google.com/file/d/1_HXaD-Ev0keZ9yzCyCSvznkpXGhL3yhE/view?usp=sharing)
+
 ## SDカードイメージ
 
 - [FaBo JetRacer Kit 1.0 for Jetpack4.6.1](https://drive.google.com/file/d/1tZ5bNfE9gJ67E_HGm_hXMXGRFWvKaoTe/view?usp=sharing)
