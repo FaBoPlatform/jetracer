@@ -35,6 +35,10 @@
 
 [![youtube](https://img.youtube.com/vi/Rbr38xTfuqY/default.jpg)](https://www.youtube.com/watch?v=Rbr38xTfuqY)
 
+## レース
+
+自動運転ミニカーバトル 2023
+[![youtube](https://img.youtube.com/vi/DJxsbYfvvCg/default.jpg)](https://www.youtube.com/watch?v=DJxsbYfvvCg)
 
 ## SDカードイメージ
 
