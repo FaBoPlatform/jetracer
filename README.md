@@ -37,7 +37,7 @@
 
 ## レース
 
-自動運転ミニカーバトル 2023
+自動運転ミニカーバトル 2023<br>
 [![youtube](https://img.youtube.com/vi/DJxsbYfvvCg/default.jpg)](https://www.youtube.com/watch?v=DJxsbYfvvCg)
 
 ## SDカードイメージ
