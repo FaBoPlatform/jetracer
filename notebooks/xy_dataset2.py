@@ -15,14 +15,16 @@ class XYDataset(torch.utils.data.Dataset):
         self.directory = directory
         self.categories = categories
         self.transform = transform
+        self.annotations = {}
+        self.index_to_no = []
         self.refresh()
         self.random_hflip = random_hflip
-        
     def __len__(self):
         return len(self.annotations)
     
     def __getitem__(self, idx):
-        ann = self.annotations[idx]
+        no = self.index_to_no[idx]
+        ann = self.annotations[no]
         image = cv2.imread(ann['image_path'], cv2.IMREAD_COLOR)
         image = PIL.Image.fromarray(image)
         width = image.width
@@ -48,34 +50,23 @@ class XYDataset(torch.utils.data.Dataset):
         return int(x), int(y), int(no)
         
     def refresh(self):
-        self.annotations = []
+        self.annotations.clear()
+        self.index_to_no.clear()
         for category in self.categories:
             category_index = self.categories.index(category)
-            # ここでファイルのリストを取得し、最終変更日時でソート
-            image_paths = sorted(glob.glob(os.path.join(self.directory, category, '*.jpg')), 
-                                 key=os.path.getmtime)
+            # noをユニークキーとするdict型でannotationを記録するため、ソート不要
+            image_paths = glob.glob(os.path.join(self.directory, category, '*.jpg'))
             for image_path in image_paths:
                 x, y, no = self._parse(image_path)
-                self.annotations += [{
+                self.annotations[no] = {
                     'image_path': image_path,
                     'category_index': category_index,
                     'category': category,
                     'x': x,
                     'y': y,
                     'no': no
-                }]
-        
-    def old_save_entry(self, category, image, x, y, no):
-        category_dir = os.path.join(self.directory, category)
-        if not os.path.exists(category_dir):
-            subprocess.call(['mkdir', '-p', category_dir])
-            
-        filename = '%d_%d_%d_%s.jpg' % (x, y, no, str(uuid.uuid1()))
-        
-        image_path = os.path.join(category_dir, filename)
-        cv2.imwrite(image_path, image)
-        self.refresh()
-
+                }
+                self.index_to_no.append(no)
 
     def save_entry(self, category, image, x, y, no):
         category_dir = os.path.join(self.directory, category)
@@ -112,7 +103,8 @@ class XYDataset(torch.utils.data.Dataset):
         if annotation:
             image_path = annotation['image_path']
             os.remove(image_path)
-            self.annotations = [ann for ann in self.annotations if ann['no'] != no]
+            del self.annotations[no]  # キーに対応する要素を削除
+            self.index_to_no = [n for n in self.index_to_no if n != no]  # マップも更新
             return image_path
         return None
     
@@ -133,10 +125,7 @@ class XYDataset(torch.utils.data.Dataset):
         Returns:
             dict or None: 見つかったアノテーションの辞書、見つからなければ None
         """
-        for annotation in self.annotations:
-            if annotation['no'] == no:
-                return annotation
-        return None
+        return self.annotations.get(no, None)
 
 class HeatmapGenerator():
     def __init__(self, shape, std):
