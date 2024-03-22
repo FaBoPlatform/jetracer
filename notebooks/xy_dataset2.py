@@ -23,8 +23,8 @@ class XYDataset(torch.utils.data.Dataset):
         return len(self.annotations)
     
     def __getitem__(self, idx):
-        no = self.index_to_no[idx]
-        ann = self.annotations[no]
+        task_dataset_category_no = self.index_to_no[idx]
+        ann = self.annotations[task_dataset_category_no]
         image = cv2.imread(ann['image_path'], cv2.IMREAD_COLOR)
         image = PIL.Image.fromarray(image)
         width = image.width
@@ -46,8 +46,10 @@ class XYDataset(torch.utils.data.Dataset):
         items = basename.split('_')
         x = items[0]
         y = items[1]
-        no = items[2]
-        return int(x), int(y), int(no)
+        uuid_with_extension = items[-1]
+        task_dataset_category_no = '_'.join(items[2:-1])  # 最後の部分（uuid.jpg）を除いた残り全て
+        uuid = uuid_with_extension.split('.')[0]  # 拡張子を取り除く
+        return int(x), int(y), task_dataset_category_no
         
     def refresh(self):
         self.annotations.clear()
@@ -57,8 +59,9 @@ class XYDataset(torch.utils.data.Dataset):
             # noをユニークキーとするdict型でannotationを記録するため、ソート不要
             image_paths = glob.glob(os.path.join(self.directory, category, '*.jpg'))
             for image_path in image_paths:
-                x, y, no = self._parse(image_path)
-                self.annotations[no] = {
+                x, y, task_dataset_category_no = self._parse(image_path)
+                no = task_dataset_category_no.split('_')[-1]
+                self.annotations[task_dataset_category_no] = {
                     'image_path': image_path,
                     'category_index': category_index,
                     'category': category,
@@ -66,15 +69,15 @@ class XYDataset(torch.utils.data.Dataset):
                     'y': y,
                     'no': no
                 }
-                self.index_to_no.append(no)
+                self.index_to_no.append(task_dataset_category_no)
 
-    def save_entry(self, category, image, x, y, no):
+    def save_entry(self, category, image, x, y, task_dataset_category_no):
         category_dir = os.path.join(self.directory, category)
         if not os.path.exists(category_dir):
             subprocess.call(['mkdir', '-p', category_dir])
             
         # 特定の no を持つ、任意の x, y のファイルを検索
-        existing_files = glob.glob(os.path.join(category_dir, f"*_{no}_*.jpg"))
+        existing_files = glob.glob(os.path.join(category_dir, f"*_{task_dataset_category_no}_*.jpg"))
         
         if existing_files:
             # 既存のファイルが見つかった場合、リネーム
@@ -82,7 +85,7 @@ class XYDataset(torch.utils.data.Dataset):
             old_file_name = os.path.basename(old_file_path)
             
             # '{no}_' 以降の部分（UUID および ".jpg" 拡張子を含む）を抽出
-            postfix = old_file_name.split(f"_{no}_", 1)[1]
+            postfix = old_file_name.split(f"_{task_dataset_category_no}_", 1)[1]
             
             # 新しいファイル名を生成（古い UUID を保持）
             new_file_name = f'{x}_{y}_{no}_{postfix}'
@@ -92,19 +95,19 @@ class XYDataset(torch.utils.data.Dataset):
         else:
             # 既存のファイルが見つからなかった場合、新規作成
             new_uuid = str(uuid.uuid1())
-            filename = f'{x}_{y}_{no}_{new_uuid}.jpg'
+            filename = f'{x}_{y}_{task_dataset_category_no}_{new_uuid}.jpg'
             image_path = os.path.join(category_dir, filename)
             cv2.imwrite(image_path, image)
         
         self.refresh()
 
-    def delete_entry(self, no):
-        annotation = self.find_annotation(no)
+    def delete_entry(self, task_dataset_category_no):
+        annotation = self.find_annotation(task_dataset_category_no)
         if annotation:
             image_path = annotation['image_path']
             os.remove(image_path)
-            del self.annotations[no]  # キーに対応する要素を削除
-            self.index_to_no = [n for n in self.index_to_no if n != no]  # マップも更新
+            del self.annotations[task_dataset_category_no]  # キーに対応する要素を削除
+            self.index_to_no = [n for n in self.index_to_no if n != task_dataset_category_no]  # マップも更新
             return image_path
         return None
     
@@ -115,17 +118,17 @@ class XYDataset(torch.utils.data.Dataset):
                 i += 1
         return i
 
-    def find_annotation(self, no):
+    def find_annotation(self, task_dataset_category_no):
         """
-        指定された no に合致するアノテーションを検索します。
+        指定された task_dataset_category_no に合致するアノテーションを検索します。
         
         Parameters:
-            no (int): 検索するアノテーションの no
+            task_dataset_category_no (str): 検索するアノテーションの task_dataset_category_no
 
         Returns:
             dict or None: 見つかったアノテーションの辞書、見つからなければ None
         """
-        return self.annotations.get(no, None)
+        return self.annotations.get(task_dataset_category_no, None)
 
 class HeatmapGenerator():
     def __init__(self, shape, std):
