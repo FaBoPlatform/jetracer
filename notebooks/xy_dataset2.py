@@ -88,7 +88,7 @@ class XYDataset(torch.utils.data.Dataset):
             postfix = old_file_name.split(f"_{task_dataset_category_no}_", 1)[1]
             
             # 新しいファイル名を生成（古い UUID を保持）
-            new_file_name = f'{x}_{y}_{no}_{postfix}'
+            new_file_name = f'{x}_{y}_{task_dataset_category_no}_{postfix}'
             new_file_path = os.path.join(category_dir, new_file_name)
             
             os.rename(old_file_path, new_file_path)
