@@ -58,11 +58,22 @@ class XYDataset(torch.utils.data.Dataset):
             category_index = self.categories.index(category)
             # noをユニークキーとするdict型でannotationを記録するため、ソート不要
             image_paths = glob.glob(os.path.join(self.directory, category, '*.jpg'))
-            for image_path in image_paths:
+            
+            # _parseメソッドを使用してソートのためのキーを準備
+            def sort_key(path):
+                x, y, task_dataset_category_no = self._parse(path)
+                # task_dataset_category_noを '_' で分割し、最後の要素（no）をint型に変換してソートキーとする
+                parts = task_dataset_category_no.rsplit('_', 1)
+                return (parts[0], int(parts[1])) if len(parts) > 1 else (task_dataset_category_no, 0)
+            # 準備したキーでソート
+            image_paths_sorted = sorted(image_paths, key=sort_key)
+            
+            for image_path in image_paths_sorted:
                 x, y, task_dataset_category_no = self._parse(image_path)
                 no = task_dataset_category_no.split('_')[-1]
                 self.annotations[task_dataset_category_no] = {
                     'image_path': image_path,
+                    'task_dataset_category_no': task_dataset_category_no,
                     'category_index': category_index,
                     'category': category,
                     'x': x,
@@ -96,10 +107,11 @@ class XYDataset(torch.utils.data.Dataset):
             # 既存のファイルが見つからなかった場合、新規作成
             new_uuid = str(uuid.uuid1())
             filename = f'{x}_{y}_{task_dataset_category_no}_{new_uuid}.jpg'
-            image_path = os.path.join(category_dir, filename)
-            cv2.imwrite(image_path, image)
+            new_file_path = os.path.join(category_dir, filename)
+            cv2.imwrite(new_file_path, image)
         
         self.refresh()
+        return new_file_path
 
     def delete_entry(self, task_dataset_category_no):
         annotation = self.find_annotation(task_dataset_category_no)
@@ -129,6 +141,14 @@ class XYDataset(torch.utils.data.Dataset):
             dict or None: 見つかったアノテーションの辞書、見つからなければ None
         """
         return self.annotations.get(task_dataset_category_no, None)
+
+    def find_annotation_from_index(self, idx):
+        task_dataset_category_no = self.index_to_no[idx]
+        return self.annotations.get(task_dataset_category_no, None)
+
+    def find_task_dataset_category_no_from_index(self, idx):
+        ann = self.find_annotation_from_index(idx)
+        return ann['task_dataset_category_no']
 
 class HeatmapGenerator():
     def __init__(self, shape, std):
