@@ -143,12 +143,19 @@ class XYDataset(torch.utils.data.Dataset):
         return self.annotations.get(task_dataset_category_no, None)
 
     def find_annotation_from_index(self, idx):
-        task_dataset_category_no = self.index_to_no[idx]
+        if len(self.index_to_no) >= idx + 1:
+            task_dataset_category_no = self.index_to_no[idx]
+        else:
+            return None
         return self.annotations.get(task_dataset_category_no, None)
+
 
     def find_task_dataset_category_no_from_index(self, idx):
         ann = self.find_annotation_from_index(idx)
-        return ann['task_dataset_category_no']
+        if ann is None:
+            return None
+        else:
+            return ann['task_dataset_category_no']
 
 class HeatmapGenerator():
     def __init__(self, shape, std):
