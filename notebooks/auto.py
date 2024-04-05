@@ -1,6 +1,5 @@
-import Jetson.GPIO as GPIO
 
-BOARD_NAME = GPIO.gpio_pin_data.get_data()[0]
+#BOARD_NAME = GPIO.gpio_pin_data.get_data()[0]
 
 mode_descriptions = {
     "JETSON_NX": ["15W_2CORE", "15W_4CORE", "15W_6CORE", "10W_2CORE", "10W_4CORE"],
@@ -26,7 +25,7 @@ board_settings = {
     "JETSON_ORIN": (7, 0),
     "JETSON_ORIN_NANO": (7, 0)
 }
-
+BOARD_NAME = "JETSON_ORIN_NANO"
 i2c_busnum, power_mode = board_settings.get(BOARD_NAME, (None, None))
 mode_description = mode_descriptions.get(BOARD_NAME, [])
 product_name = product_names.get(BOARD_NAME, "未知のボード")
@@ -54,6 +53,9 @@ def write_log(msg):
         with open("/home/jetson/data/notebooks/logfile.log", "a") as log_file:
             log_file.write(log_message)
             print(log_message)
+
+print("PCA9685の初期化")
+
 import Fabo_PCA9685
 import time
 import pkg_resources
@@ -61,13 +63,16 @@ import smbus
 import time
 import json
 
-SMBUS='smbus'
-BUSNUM=i2c_busnum
-SERVO_HZ=60
-INITIAL_VALUE=300
-bus = smbus.SMBus(BUSNUM)
-PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x40)
-PCA9685.set_hz(SERVO_HZ)
+try:
+    SMBUS='smbus'
+    BUSNUM=i2c_busnum
+    SERVO_HZ=60
+    INITIAL_VALUE=300
+    bus = smbus.SMBus(BUSNUM)
+    PCA9685 = Fabo_PCA9685.PCA9685(bus,INITIAL_VALUE,address=0x40)
+    PCA9685.set_hz(SERVO_HZ)
+except Exception as e:
+    print(f"Error:{e}")
 
 STEERING_CH = 0
 THROTTLE_CH = 1
@@ -77,6 +82,8 @@ NORMAL = 1
 
 pwm_front = 0
 pwm_back = 0
+
+print("PWM Paramsの取得と反映")
 
 with open('/home/jetson/data/notebooks/pwm_params.json') as f:
     json_str = json.load(f)
@@ -93,7 +100,9 @@ if pwm_front >= pwm_back:
     direction = REVERSE
 else:
     direction = NORMAL
+
     
+print("PWM初期値の設定")
 PCA9685.set_channel_value(STEERING_CH, pwm_center)
 PCA9685.set_channel_value(THROTTLE_CH, pwm_stop)
 
@@ -106,12 +115,16 @@ def open_camera():
     global cam0, cam1
     try:
         cam0 = CSICamera(capture_device=0,width=224, height=224, capture_fps=CAM0_FPS)
+    except Exception as e:
+        # スタックトレースを含むエラーメッセージを取得
+        #error_message = f"Error open_camera:{e}\n{''.join(traceback.format_exception(None, e, e.__traceback__))}"
+        write_log("Error:open_camera:cam0")
+    try:
         cam1 = CSICamera(capture_device=1,width=224, height=224, capture_fps=CAM1_FPS)
     except Exception as e:
         # スタックトレースを含むエラーメッセージを取得
-        error_message = f"Error open_camera:{e}\n{''.join(traceback.format_exception(None, e, e.__traceback__))}"
-        write_log(error_message)
-        
+        #error_message = f"Error open_camera:{e}\n{''.join(traceback.format_exception(None, e, e.__traceback__))}"
+        write_log("Error:open_camera:cam0")        
         
 CATEGORIES = ["mall","diner","bank","school","hotel","supermarket","hospital","campus","etc"]
 
@@ -164,19 +177,31 @@ def change_color(color):
     else:
         print(f"Error change_color: '{color}' is not a valid color.")
 
+print("LEDの初期化")
 init_led()
 change_color("green")
 
+print("各種import:threading")
 import threading
+print("各種import:torch")
 import torch
+print("各種import:preprocess")
 from utils import preprocess
+print("各種import:subprocess")
 import subprocess
+print("各種import:cv2")
 import cv2
+print("各種import:time")
 import time
+print("各種import:TRTModule")
 from torch2trt import TRTModule
+print("各種import:subprocess")
 import subprocess
+print("各種import:datetime")
 import datetime
+print("各種import:torch.nn.functional")
 import torch.nn.functional as F
+print("import終了")
 
 record = False
 running = False
@@ -228,7 +253,9 @@ def get_model(status, target):
         else:
             name = "model_c"
             return name,model_c_trt 
-        
+
+print("LoRa Status設定")
+
 # LoRaモジュールのステータス定義
 LORA_STATUS_IDLE = 0
 LORA_STATUS_DRIVING = 1
@@ -354,7 +381,9 @@ def live_cam0():
                 elif status == STATUS_ARRIVE:
                     PCA9685.set_channel_value(THROTTLE_CH, pwm_stop)
                     speed = 0
+                    write_log("到着 LoRa送信")
                     lora_send_status(car_id, LORA_STATUS_ARRIVED)
+                    write_log("到着 Stop呼び出し")
                     stop(None)
                     
                     
@@ -420,7 +449,8 @@ def live_cam0():
     if record == True:
         write_log(f"画像を{count_cam0}枚の走行データを保存しました。")
         
-        
+print("Camera Status設定")
+   
 STATUS_WAIT = 99
 STATUS_IN = 1
 STATUS_OUT_A = 2
@@ -822,23 +852,28 @@ def stop(change):
         except:
             fps = -1
             process_time = -1
-        mode_running = False
+        
         write_log("AIを停止しました。")
         write_log("処理結果:FPS: " + str(round(fps,2)) + ",処理回数: " + str(count_cam0) + ",　処理時間(1回平均値): " + str(process_time) + " ms")
         running = False
         running_cam0 = False
         running_cam1 = False
-            
+        time.sleep(0.1)
         try:    
             execute_thread_cam0.join()
+        except:
+            write_log("Thread joinでエラー(すでにcam0 threadが存在しない")
+        try:      
             execute_thread_cam1.join()
         except:
-            write_log("Thread joinでエラー(すでにthreadが存在しない")
-            
+            write_log("Thread joinでエラー(すでにcam1 threadが存在しない")
         try:
             stop_camera(None)
         except:
             write_log("カメラの停止処理でエラー")
+        
+        write_log("走行モードの全処理を終了!!")
+        mode_running = False
         
     else:
         PCA9685.set_channel_value(THROTTLE_CH, pwm_stop)
@@ -872,6 +907,7 @@ def get_jetson_nano_memory_usage(event=None):
     except subprocess.CalledProcessError as e:
         return
 
+print("メモリ使用量取得")
 get_jetson_nano_memory_usage()
 #memory_button.on_click(get_jetson_nano_memory_usage)
 
@@ -884,9 +920,11 @@ def stop_camera(c):
     cam0.running = False
     cam1.running = False
     time.sleep(0.1)
-    cam1.cap.release()
     cam0.cap.release()
-    write_log("カメラ0,1を開放しました。")
+    write_log("カメラ0を開放しました。")
+    time.sleep(0.1)
+    cam1.cap.release()
+    write_log("カメラ1を開放しました。")
 
 #release_button.on_click(stop_camera)
 
@@ -1021,7 +1059,7 @@ car_id = 5
 
 print(f"LoRa起動")
 SPEED_FAST = 190
-SPEED_FLOW = 120
+SPEED_SLOW = 120
 
 CAT0_STOP_TIME = 1000
 CAT1_STOP_TIME = 1000
