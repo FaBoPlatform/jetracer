@@ -25,12 +25,20 @@ import Adafruit_SSD1306
 from PIL import Image
 from PIL import ImageDraw
 from PIL import ImageFont
-from jetbot.utils.utils import get_ip_address
-
+from utils import get_ip_address
+import Jetson.GPIO as GPIO
 import subprocess
 
 # 128x32 display with hardware I2C:
-disp = Adafruit_SSD1306.SSD1306_128_32(rst=None, i2c_bus=1, gpio=1) # setting gpio to 1 is hack to avoid platform detection
+BOARD_NAME = GPIO.gpio_pin_data.get_data()[0]
+bus_id = 1
+if BOARD_NAME == "JETSON_ORIN_NANO" or BOARD_NAME == "JETSON_NANO":
+    bus_id = 7
+elif BOARD_NAME == "JETSON_XAVIER" or BOARD_NAME == "JETSON_NX":
+    bus_id = 8
+else:
+    bus_id = 1
+disp = Adafruit_SSD1306.SSD1306_128_32(rst=None, i2c_bus=bus_id, gpio=1) # setting gpio to 1 is hack to avoid platform detection
 
 # Initialize library.
 disp.begin()
@@ -62,7 +70,6 @@ x = 0
 # Load default font.
 font = ImageFont.load_default()
 
-
 while True:
 
     # Draw a black filled box to clear the image.
@@ -77,11 +84,11 @@ while True:
     Disk = subprocess.check_output(cmd, shell = True )
 
     # Write two lines of text.
-
-    draw.text((x, top),       "eth0: " + str(get_ip_address('eth0')),  font=font, fill=255)
-    draw.text((x, top+8),     "wlan0: " + str(get_ip_address('wlan0')), font=font, fill=255)
-    draw.text((x, top+16),    str(MemUsage.decode('utf-8')),  font=font, fill=255)
-    draw.text((x, top+25),    str(Disk.decode('utf-8')),  font=font, fill=255)
+    draw.text((x, top),       "usb:" + str(get_ip_address('l4tbr0')),  font=font, fill=255)
+    draw.text((x, top+8),       "eth:" + str(get_ip_address('eth0')),  font=font, fill=255)
+    draw.text((x, top+16),     "wlan:" + str(get_ip_address('wlan0')), font=font, fill=255)
+    #draw.text((x, top+16),    str(MemUsage.decode('utf-8')),  font=font, fill=255)
+    #draw.text((x, top+25),    str(Disk.decode('utf-8')),  font=font, fill=255)
 
     # Display image.
     disp.image(image)
