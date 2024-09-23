@@ -20,6 +20,10 @@
 | 1/10th スケール |
 | ベース車両は、TAMIYA社　TT-02|
 
+## Orin Nano用環境構築Script
+
+[Orin Nano JetPack5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
+
 ## チュートリアル
 
 ドキュメント
