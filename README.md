@@ -35,6 +35,11 @@
 
 [![youtube](https://img.youtube.com/vi/Rbr38xTfuqY/default.jpg)](https://www.youtube.com/watch?v=Rbr38xTfuqY)
 
+## Orin Nano用環境構築Script
+
+[Orin Nano JetPack5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
+
+
 ## レース
 
 自動運転ミニカーバトル 2023<br>
