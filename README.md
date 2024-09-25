@@ -12,6 +12,11 @@
 
 などが挙げられます。
 
+## 各種レポジトリ
+
+- [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) ミニカーバトル2024用 Notebook
+- [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) ミニカーバトル2023用 Notebook
+
 ## 車体
 
 |  [FaBo JetRacer Kit](https://fabo.store/collections/jetracer) |
