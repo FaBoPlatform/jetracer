@@ -58,6 +58,8 @@
 <b>自動運転ミニカーバトル 2023</b><br>
 
 [Race23ブランチ](https://github.com/FaBoPlatform/jetracer/tree/Race23)に、レース時使用Notebookを公開しています。<br>
+
+レースの様子<br>
 [![youtube](https://img.youtube.com/vi/DJxsbYfvvCg/default.jpg)](https://www.youtube.com/watch?v=DJxsbYfvvCg) <br>
 
 - [11_record_camera.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/11_record_camera.ipynb)
