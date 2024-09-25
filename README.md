@@ -51,7 +51,7 @@
 [![youtube](https://img.youtube.com/vi/RqErJ61W3Jw/default.jpg)](https://www.youtube.com/watch?v=RqErJ61W3Jw)
 [![youtube](https://img.youtube.com/vi/pLzW4NR5-y8/default.jpg)](https://www.youtube.com/watch?v=pLzW4NR5-y8)
 
-<b>柏の葉 Coil Mobility Field屋外走行</b><br>
+<b>各種イベントデモ走行</b><br>
 [![youtube](https://img.youtube.com/vi/Rbr38xTfuqY/default.jpg)](https://www.youtube.com/watch?v=Rbr38xTfuqY)
 
 ## Orin Nano用環境構築Script
