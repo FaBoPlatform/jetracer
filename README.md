@@ -82,7 +82,7 @@ Colabでの学習用Notebook<br>
 
 ## Jetson Orin Nano用環境構築Script
 
-[Orin Nano JetPack 5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
+- [Orin Nano JetPack 5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
 
 ## Jetson Nano用SDカードイメージ
 
