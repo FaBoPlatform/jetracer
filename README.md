@@ -14,9 +14,10 @@
 
 ## 各種レポジトリ
 
+- [AI86](https://github.com/FaBoPlatform/jetracer/tree/AI86) 最新のNotebook
 - [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) ミニカーバトル2024用 Notebook
 - [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) ミニカーバトル2023用 Notebook
-
+- 
 ## 車体
 
 |  [FaBo JetRacer Kit](https://fabo.store/collections/jetracer) |
