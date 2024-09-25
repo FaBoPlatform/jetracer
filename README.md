@@ -20,6 +20,11 @@
 | 1/10th スケール |
 | ベース車両は、TAMIYA社　TT-02|
 
+## 各種レポジトリ
+
+- [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) ミニカーバトル2024用 Notebook
+- [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) ミニカーバトル2023用 Notebook
+
 ## チュートリアル
 
 ドキュメント
