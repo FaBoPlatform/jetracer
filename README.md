@@ -47,7 +47,7 @@
 
 ## 展示会デモ
 
-<b>Google Next24@ラスベガス ブースデモ</b><br>
+<b>Google Next24@ラスベガス ブースデモ(Googleブース, Gemini連携デモ)</b><br>
 [![youtube](https://img.youtube.com/vi/RqErJ61W3Jw/default.jpg)](https://www.youtube.com/watch?v=RqErJ61W3Jw)
 [![youtube](https://img.youtube.com/vi/pLzW4NR5-y8/default.jpg)](https://www.youtube.com/watch?v=pLzW4NR5-y8)
 
