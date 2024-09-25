@@ -29,7 +29,6 @@
 
 ## 各種レポジトリ
 
-
 - [AI86](https://github.com/FaBoPlatform/jetracer/tree/AI86) 最新のNotebook
 - [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) ミニカーバトル2024用 Notebook
 - [Next24](https://github.com/FaBoPlatform/jetracer/tree/Next24) Google Next 2024@ラスベガス 展示デモ
@@ -56,9 +55,11 @@
 
 ## レース
 
-自動運転ミニカーバトル 2023<br>
-[Race23ブランチ](https://github.com/FaBoPlatform/jetracer/tree/Race23)に、レース時使用Notebookを公開しています。
+<b>自動運転ミニカーバトル 2023</b><br>
+
+[Race23ブランチ](https://github.com/FaBoPlatform/jetracer/tree/Race23)に、レース時使用Notebookを公開しています。<br>
 [![youtube](https://img.youtube.com/vi/DJxsbYfvvCg/default.jpg)](https://www.youtube.com/watch?v=DJxsbYfvvCg) <br>
+
 - [11_record_camera.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/11_record_camera.ipynb)
 - [12_file_manager.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/12_file_manager.ipynb)
 - [13_annotation.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/13_annotation.ipynb)
@@ -67,6 +68,7 @@
 - [20_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/20_detect.ipynb)
 - [21_convert_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/21_convert_detect.ipynb)
 - [25_run_dual_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/25_run_dual_detect.ipynb)
+  
 のNotebookを使用してモデルを作成しました。
 
 Colabでの学習用Notebook<br>
