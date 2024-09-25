@@ -20,6 +20,12 @@
 | 1/10th スケール |
 | ベース車両は、TAMIYA社　TT-02|
 
+## 各種レポジトリ
+
+- [AI86](https://github.com/FaBoPlatform/jetracer/tree/AI86) 最新のNotebook
+- [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) ミニカーバトル2024用 Notebook
+- [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) ミニカーバトル2023用 Notebook
+
 ## Orin Nano用環境構築Script
 
 [Orin Nano JetPack5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
