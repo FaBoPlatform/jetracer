@@ -25,7 +25,7 @@
 ドキュメント
 - [FaBo JetRacer Docs](https://faboplatform.github.io/JetracerDocs/)
 
-動画チュートリアル
+動画チュートリアル(YouTube)
 - [1.PWMの設定](https://www.youtube.com/watch?v=n5FJrSu17x0)
 - [2.アノテーションと学習](https://www.youtube.com/watch?v=gz_bV-wJAO0&t=7s)
 - [3.TensorRTへの変換](https://www.youtube.com/watch?v=zbNoygm1JSQ)
@@ -37,12 +37,12 @@
 
 ## Orin Nano用環境構築Script
 
-[Orin Nano JetPack5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
-
+[Orin Nano JetPack 5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
 
 ## レース
 
 自動運転ミニカーバトル 2023<br>
+Race23ブランチに、レース時使用Notebookを公開しています。
 [![youtube](https://img.youtube.com/vi/DJxsbYfvvCg/default.jpg)](https://www.youtube.com/watch?v=DJxsbYfvvCg) <br>
 [11_record_camera.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/11_record_camera.ipynb), [12_file_manager.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/12_file_manager.ipynb), [13_annotation.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/13_annotation.ipynb), [15_train.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/15_train.ipynb), [16_convert.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/16_convert.ipynb), [20_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/20_detect.ipynb), [21_convert_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/21_convert_detect.ipynb), [25_run_dual_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/25_run_dual_detect.ipynb) のNotebookを使用してモデルを作成しました。
 
