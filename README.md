@@ -45,8 +45,13 @@
 - [3.TensorRTへの変換](https://www.youtube.com/watch?v=zbNoygm1JSQ)
 - [4.自動走行](https://www.youtube.com/watch?v=YQ8U5KHhLLA)
 
-## デモ走行
+## 展示会デモ
 
+<b>Google Next24@ラスベガス ブースデモ</b>
+[![youtube](https://img.youtube.com/vi/RqErJ61W3Jw/default.jpg)](https://www.youtube.com/watch?v=RqErJ61W3Jw)
+
+
+<b>柏の葉 Coil Mobility Field屋外走行<b>
 [![youtube](https://img.youtube.com/vi/Rbr38xTfuqY/default.jpg)](https://www.youtube.com/watch?v=Rbr38xTfuqY)
 
 ## Orin Nano用環境構築Script
