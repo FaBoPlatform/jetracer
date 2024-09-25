@@ -54,10 +54,6 @@
 <b>各種イベントデモ走行</b><br>
 [![youtube](https://img.youtube.com/vi/Rbr38xTfuqY/default.jpg)](https://www.youtube.com/watch?v=Rbr38xTfuqY)
 
-## Orin Nano用環境構築Script
-
-[Orin Nano JetPack 5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
-
 ## レース
 
 <b>自動運転ミニカーバトル 2023</b><br>
@@ -84,7 +80,11 @@ Colabでの学習用Notebook<br>
 自動運転ミニカーバトル 2023で使用したデータセットと学習済みモデル<br>
 [Google Driveからダウンロード](https://drive.google.com/file/d/1_HXaD-Ev0keZ9yzCyCSvznkpXGhL3yhE/view?usp=sharing)
 
-## SDカードイメージ
+## Jetson Orin Nano用環境構築Script
+
+[Orin Nano JetPack 5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
+
+## Jetson Nano用SDカードイメージ
 
 - [FaBo JetRacer Kit 1.0 for Jetpack4.6.1](https://drive.google.com/file/d/1tZ5bNfE9gJ67E_HGm_hXMXGRFWvKaoTe/view?usp=sharing)
 - [FaBo JetRacer Kit 1.0 for Jetpack4.5.1](https://drive.google.com/file/d/1-MvsHPYKcunSOiaXaXR15DQP6QMJJhEm/view?usp=sharing)
