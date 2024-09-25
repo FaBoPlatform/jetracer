@@ -42,7 +42,7 @@
 ## レース
 
 自動運転ミニカーバトル 2023<br>
-Race23ブランチに、レース時使用Notebookを公開しています。
+[Race23ブランチ](https://github.com/FaBoPlatform/jetracer/tree/Race23)に、レース時使用Notebookを公開しています。
 [![youtube](https://img.youtube.com/vi/DJxsbYfvvCg/default.jpg)](https://www.youtube.com/watch?v=DJxsbYfvvCg) <br>
 [11_record_camera.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/11_record_camera.ipynb), [12_file_manager.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/12_file_manager.ipynb), [13_annotation.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/13_annotation.ipynb), [15_train.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/15_train.ipynb), [16_convert.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/16_convert.ipynb), [20_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/20_detect.ipynb), [21_convert_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/21_convert_detect.ipynb), [25_run_dual_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/25_run_dual_detect.ipynb) のNotebookを使用してモデルを作成しました。
 
