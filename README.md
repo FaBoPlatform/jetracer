@@ -12,7 +12,7 @@
 
 などが挙げられます。
 
-## 各種レポジトリ
+## 各種ブランチ
 
 - [AI86](https://github.com/FaBoPlatform/jetracer/tree/AI86) 最新のNotebook
 - [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) ミニカーバトル2024用 Notebook
