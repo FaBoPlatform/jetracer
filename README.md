@@ -17,24 +17,29 @@ git clone -b Desktop https://github.com/FaBoPlatform/jetracer.git Desktop
 cd Desktop
 ```
 
-## パッケージのインストール
+## Condaの構築
 
 ```
 conda create --name jetracer python=3.9
 conda activate jetracer
 ```
 
-Windows
+## パッケージのインストール(Windows)
+
 ```
 conda install pytorch torchvision cudatoolkit=11.8 -c pytorch -c nvidia
+conda install opencv
 ```
+
+```
+pip install -r requirements.txt
+```
+
+## パッケージのインストール(OSX)
 
 OSX
 ```
 conda install pytorch==1.13.1 torchvision==0.14.1 -c pytorch
-```
-
-```
 conda install opencv
 ```
 
