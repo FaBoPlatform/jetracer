@@ -7,7 +7,7 @@ import torch.utils.data
 import subprocess
 import cv2
 import numpy as np
-
+import sys
 
 class XYDataset(torch.utils.data.Dataset):
     def __init__(self, directory, categories, transform=None, random_hflip=False):
@@ -30,8 +30,8 @@ class XYDataset(torch.utils.data.Dataset):
         if self.transform is not None:
             image = self.transform(image)
         
-        x = 2.0 * (ann['x'] / width - 0.5) # -1 left, +1 right
-        y = 2.0 * (ann['y'] / height - 0.5) # -1 top, +1 bottom
+        x = 2.0 * (ann['x'] / width - 0.5)  # -1 left, +1 right
+        y = 2.0 * (ann['y'] / height - 0.5)  # -1 top, +1 bottom
         
         if self.random_hflip and float(np.random.random(1)) > 0.5:
             image = torch.from_numpy(image.numpy()[..., ::-1].copy())
@@ -62,24 +62,30 @@ class XYDataset(torch.utils.data.Dataset):
                     'x': x,
                     'y': y
                 }]
-        
+            
     def save_entry(self, category, image, x, y):
         category_dir = os.path.join(self.directory, category)
         if not os.path.exists(category_dir):
-            subprocess.call(['mkdir', '-p', category_dir])
-            
+            if os.name == 'nt':
+                # Windowsの場合
+                os.makedirs(category_dir, exist_ok=True)
+            else:
+                # Mac/Linuxの場合
+                subprocess.call(['mkdir', '-p', category_dir])
+                
         filename = '%d_%d_%s.jpg' % (x, y, str(uuid.uuid1()))
         
         image_path = os.path.join(category_dir, filename)
         cv2.imwrite(image_path, image)
         self.refresh()
-        
+            
     def get_count(self, category):
         i = 0
         for a in self.annotations:
             if a['category'] == category:
                 i += 1
         return i
+
 
 
 class HeatmapGenerator():
