@@ -16,7 +16,7 @@
 
 ## 車体
 
-![file](https://github.com/user-attachments/assets/abdd2ae0-6a08-4d19-bebc-489a757318d2)
+![Race24](https://github.com/user-attachments/assets/7bb578ab-f954-482d-9dc2-0def9c53e88e)
 
 ## Hardware
 
