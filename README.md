@@ -12,21 +12,22 @@
   
 ## レース
 
-[自動運転ミニカーバトル 2023](https://autonomous-minicar-battle.studio.site/)(20203年11/26(日):開催)
+- [自動運転ミニカーバトル 2023](https://autonomous-minicar-battle.studio.site/)(2023年11/26(日)開催)
 
 ## 決勝レースの様子
 
 [![youtube](https://img.youtube.com/vi/DJxsbYfvvCg/default.jpg)](https://www.youtube.com/watch?v=DJxsbYfvvCg) <br>
 
 ## レースで使用したNotebook
-- [11_record_camera.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/11_record_camera.ipynb)
-- [12_file_manager.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/12_file_manager.ipynb)
-- [13_annotation.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/13_annotation.ipynb)
-- [15_train.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/15_train.ipynb)
-- [16_convert.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/16_convert.ipynb)
-- [20_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/20_detect.ipynb)
-- [21_convert_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/21_convert_detect.ipynb)
-- [25_run_dual_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/AI86/notebooks/25_run_dual_detect.ipynb)
+
+- [11_record_camera.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/11_record_camera.ipynb)
+- [12_file_manager.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/12_file_manager.ipynb)
+- [13_annotation.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/13_annotation.ipynb)
+- [15_train.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/15_train.ipynb)
+- [16_convert.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/16_convert.ipynb)
+- [20_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/20_detect.ipynb)
+- [21_convert_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/21_convert_detect.ipynb)
+- [25_run_dual_detect.ipynb](https://github.com/FaBoPlatform/jetracer/blob/Race23/notebooks/25_run_dual_detect.ipynb)
 
 ## Dataset
 
