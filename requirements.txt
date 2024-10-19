@@ -2,3 +2,4 @@ matplotlib
 jupyter 
 notebook
 traitlets
+ipyevents
