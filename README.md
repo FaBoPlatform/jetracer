@@ -64,3 +64,4 @@ Jetson Nano(4GB用)SDカードイメージ
 
 - [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) ミニカーバトル2024用 Notebook
 - [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) ミニカーバトル2023用 Notebook
+[![youtube](https://img.youtube.com/vi/_7cuafEg-AM/default.jpg)](https://www.youtube.com/watch?v=_7cuafEg-AM) <br>
