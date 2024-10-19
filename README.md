@@ -24,6 +24,14 @@ Googleブース
 
 ![IMG_6004](https://github.com/user-attachments/assets/dc3ca9be-c1d5-4d1a-8322-608cdbc266c3)
 
+## Hardware
+
+- FaBo JetRacer Kit for Reace Edition
+- Jetson Orin Nano
+- Camera(IMX219) x 2
+- FPV Camera x 1
+- LoRaモジュール(Geminiからの指示を転送)
+
 ## デモ要件
 
 Geminiからの指示を受けて目的地までJetRacerを自動走行させる
@@ -41,14 +49,6 @@ Geminiからの指示を受けて目的地までJetRacerを自動走行させる
 
 推論の動画<br>
 [![youtube](https://img.youtube.com/vi/pLzW4NR5-y8/default.jpg)](https://www.youtube.com/watch?v=pLzW4NR5-y8)
-
-## Hardware
-
-- FaBo JetRacer Kit for Reace Edition
-- Jetson Orin Nano
-- Camera(IMX219) x 2
-- FPV Camera x 1
-- LoRaモジュール(Geminiからの指示を転送)
 
 ## デモの様子
 
