@@ -37,7 +37,6 @@ pip install -r requirements.txt
 
 ## パッケージのインストール(OSX)
 
-OSX
 ```
 conda install pytorch==1.13.1 torchvision==0.14.1 -c pytorch
 conda install opencv
