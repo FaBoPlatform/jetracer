@@ -22,7 +22,7 @@ Googleブース
 
 ## 車体
 
-![IMG_6004](https://github.com/user-attachments/assets/7f369151-4f24-4d16-acd3-36e4ba9b7362)
+![IMG_6004](https://github.com/user-attachments/assets/dc3ca9be-c1d5-4d1a-8322-608cdbc266c3)
 
 ## デモ要件
 
