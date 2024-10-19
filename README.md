@@ -17,8 +17,10 @@
 ## ブース
 
 Googleブース<br>
-![IMG_6152](https://github.com/user-attachments/assets/40cd100f-12e3-464a-8a39-ca4eeaa06c97)<br>
-![IMG_6006](https://github.com/user-attachments/assets/5c216a4b-e672-441c-85c4-42ee5201de15)<br>
+<br>
+![BOOTH1](https://github.com/user-attachments/assets/df392cdc-dfdd-4b27-9ffd-d683d6b017a1)<br>
+![BOOTH2](https://github.com/user-attachments/assets/ba804e00-ae6a-4045-911b-22d7903e5113)<br>
+![BOOTH3](https://github.com/user-attachments/assets/ce6d21c4-a2bc-468c-92ee-39e57744f87b)<br>
 
 ## 車体
 
