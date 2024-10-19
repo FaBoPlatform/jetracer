@@ -12,7 +12,7 @@
   
 ## 展示会
 
--[Google Cloud Next 24](https://cloud.withgoogle.com/next)
+- [Google Cloud Next 24](https://cloud.withgoogle.com/next)
 
 ## ブース
 
