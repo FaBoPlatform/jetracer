@@ -1,4 +1,4 @@
-# FaBo JetRacer Kit
+# FaBo JetRacer Kit(Desktopブランチ)
 
 このレポジトリは、[NVIDIA-AI-IOT/jetracer](http://github.com/NVIDIA-AI-IOT/jetracer)のForkプロジェクトです。
 
