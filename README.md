@@ -32,8 +32,3 @@
 - FaBo JetRacer Kit for Reace Edition
 - Jetson Orin Nano
 - Camera(IMX219) x 2
-
-## Dataset
-
-自動運転ミニカーバトル 2023で使用したデータセットと学習済みモデル<br>
-- [Google Driveからダウンロード](https://drive.google.com/file/d/1_HXaD-Ev0keZ9yzCyCSvznkpXGhL3yhE/view?usp=sharing)
