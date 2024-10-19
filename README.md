@@ -59,14 +59,18 @@ Jetson Nano(4GB用)SDカードイメージ
 
 ## 展示会デモ
 
-| Branch | 説明 | 関連動画 |
-| --- | --- | ---|
-| [Next24](https://github.com/FaBoPlatform/jetracer/tree/Next24) | Google Next 2024 Googleブースデモ |  [![youtube](https://img.youtube.com/vi/cO0iVCv9cfI/default.jpg)](https://www.youtube.com/watch?v=cO0iVCv9cfI)  [![youtube](https://img.youtube.com/vi/pLzW4NR5-y8/default.jpg)](https://www.youtube.com/watch?v=pLzW4NR5-y8) [![youtube](https://img.youtube.com/vi/RqErJ61W3Jw/default.jpg)](https://www.youtube.com/watch?v=RqErJ61W3Jw) |
+| Branch | 車体 | 説明 | 関連動画 |
+| --- | --- | --- | --- |
+| [Next24](https://github.com/FaBoPlatform/jetracer/tree/Next24) | ![next24](https://github.com/user-attachments/assets/659a907a-91f2-4b12-8f74-689025d2b5fa)
+ | Google Next 2024 Googleブースデモ |  [![youtube](https://img.youtube.com/vi/cO0iVCv9cfI/default.jpg)](https://www.youtube.com/watch?v=cO0iVCv9cfI)  [![youtube](https://img.youtube.com/vi/pLzW4NR5-y8/default.jpg)](https://www.youtube.com/watch?v=pLzW4NR5-y8) [![youtube](https://img.youtube.com/vi/RqErJ61W3Jw/default.jpg)](https://www.youtube.com/watch?v=RqErJ61W3Jw) |
+
 
 
 ## レース
 
-| Branch | 説明 | 関連動画 |
-| --- | --- | ---|
-| [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) | ミニカーバトル2024用 Notebook |  |
-| [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) | ミニカーバトル2023用 Notebook | [![youtube](https://img.youtube.com/vi/_7cuafEg-AM/default.jpg)](https://www.youtube.com/watch?v=_7cuafEg-AM) |
+| Branch | 車体 | 説明 | 関連動画 |
+| --- | --- | --- | ---|
+| [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) | ![race2024](https://github.com/user-attachments/assets/3c8896b0-912f-4b26-9bd7-84e48dd82c82)
+ | ミニカーバトル2024用 Notebook |  |
+| [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) | ![race2023](https://github.com/user-attachments/assets/a48855bb-eff3-4e9d-8de7-3ff107afc37d)
+ | ミニカーバトル2023用 Notebook | [![youtube](https://img.youtube.com/vi/_7cuafEg-AM/default.jpg)](https://www.youtube.com/watch?v=_7cuafEg-AM) |
