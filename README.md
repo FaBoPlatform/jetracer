@@ -14,6 +14,16 @@
 
 - [自動運転ミニカーバトル 2024](https://autonomous-minicar-battle.github.io/race-2024/)(2024年10/26(日)開催)
 
+## 車体
+
+![file](https://github.com/user-attachments/assets/abdd2ae0-6a08-4d19-bebc-489a757318d2)
+
+## Hardware
+
+- FaBo JetRacer Kit for Reace Edition
+- Jetson Orin Nano
+- Camera(IMX219) x 2
+- 
 ## レース要件
 
 コース途中に矢印が表示されるので、矢印側に走行を寄せる。
@@ -27,8 +37,3 @@
 
 の4モデルで走行を実現。
 
-## Hardware
-
-- FaBo JetRacer Kit for Reace Edition
-- Jetson Orin Nano
-- Camera(IMX219) x 2
