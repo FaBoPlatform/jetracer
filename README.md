@@ -35,7 +35,8 @@ Geminiからの指示を受けて目的地までJetRacerを自動走行させる
 
 の6モデルで走行を実現。
 
-
+推論の動画
+[![youtube](https://img.youtube.com/vi/pLzW4NR5-y8/default.jpg)](https://www.youtube.com/watch?v=pLzW4NR5-y8)
 
 ## Hardware
 
@@ -46,4 +47,5 @@ Geminiからの指示を受けて目的地までJetRacerを自動走行させる
 
 ## デモの様子
 
-[![youtube](https://img.youtube.com/vi/_7cuafEg-AM/default.jpg)](https://www.youtube.com/watch?v=_7cuafEg-AM) <br>
+[![youtube](https://img.youtube.com/vi/cO0iVCv9cfI/default.jpg)](https://www.youtube.com/watch?v=cO0iVCv9cfI)   [![youtube](https://img.youtube.com/vi/RqErJ61W3Jw/default.jpg)](https://www.youtube.com/watch?v=RqErJ61W3Jw) |
+
