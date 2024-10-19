@@ -9,7 +9,11 @@
 - [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) ミニカーバトル2024用 Notebook
 - [Next24](https://github.com/FaBoPlatform/jetracer/tree/Next24) Google Next 2024@ラスベガス 展示デモ
 - [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) ミニカーバトル2023用 Notebook
-  
+
+## Desktop版
+
+Desktop版は、Jetson以外のDesktop PC環境でのアノテーションや学習を可能にしたNotebookを公開しています。
+
 ## プロジェクト
 
 ```
