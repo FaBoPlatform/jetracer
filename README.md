@@ -47,5 +47,5 @@ pip install -r requirements.txt
 
 ```
 cd notebooks
-jupoyter notebooks
+jupyter notebook
 ```
