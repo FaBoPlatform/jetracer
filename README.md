@@ -46,7 +46,7 @@
 ## Cloudでの学習
 
 Colabでの学習用Notebook<br>
-[FaBo JetRacerCloud](https://colab.research.google.com/drive/1GbDrNiosTKSJNOJiCiVgv6V8X-0GDBfW?usp=sharing)
+- [FaBo JetRacerCloud](https://colab.research.google.com/drive/1GbDrNiosTKSJNOJiCiVgv6V8X-0GDBfW?usp=sharing)
 
 ## SDカード
 
