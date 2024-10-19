@@ -1,4 +1,4 @@
-# FaBo JetRacer Kit(Nextブランチ)
+# FaBo JetRacer Kit(Next24ブランチ)
 
 このレポジトリは、[NVIDIA-AI-IOT/jetracer](http://github.com/NVIDIA-AI-IOT/jetracer)のForkプロジェクトです。
 
