@@ -33,6 +33,9 @@
 ドキュメント
 - [FaBo JetRacer Docs](https://faboplatform.github.io/JetracerDocs/)
 
+最初に実施するDocs
+- [QuickStart](https://faboplatform.github.io/JetracerDocs/quick/01.intro/)
+
 動画チュートリアル(YouTube)
 - [1.PWMの設定](https://www.youtube.com/watch?v=n5FJrSu17x0)
 - [2.アノテーションと学習](https://www.youtube.com/watch?v=gz_bV-wJAO0&t=7s)
