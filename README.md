@@ -17,8 +17,8 @@
 ## ブース
 
 Googleブース
-
-![IMG_6152](https://github.com/user-attachments/assets/ef42495b-f47a-4ebd-aea7-7edd7cba4a39)
+![IMG_6152](https://github.com/user-attachments/assets/40cd100f-12e3-464a-8a39-ca4eeaa06c97)
+![IMG_6006](https://github.com/user-attachments/assets/5c216a4b-e672-441c-85c4-42ee5201de15)
 
 ## 車体
 
