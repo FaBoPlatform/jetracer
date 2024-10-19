@@ -61,7 +61,7 @@ Jetson Nano(4GB用)SDカードイメージ
 
 | Branch | 説明 | 関連動画 |
 | --- | --- | ---|
-| [Next24](https://github.com/FaBoPlatform/jetracer/tree/Next24) | Google Next 2024 Googleブースデモ | [![youtube](https://img.youtube.com/vi/pLzW4NR5-y8/default.jpg)](https://www.youtube.com/watch?v=pLzW4NR5-y8) [![youtube](https://img.youtube.com/vi/RqErJ61W3Jw/default.jpg)](https://www.youtube.com/watch?v=RqErJ61W3Jw) |
+| [Next24](https://github.com/FaBoPlatform/jetracer/tree/Next24) | Google Next 2024 Googleブースデモ |  [![youtube](https://img.youtube.com/vi/cO0iVCv9cfI/default.jpg)](https://www.youtube.com/watch?v=cO0iVCv9cfI)  [![youtube](https://img.youtube.com/vi/pLzW4NR5-y8/default.jpg)](https://www.youtube.com/watch?v=pLzW4NR5-y8) [![youtube](https://img.youtube.com/vi/RqErJ61W3Jw/default.jpg)](https://www.youtube.com/watch?v=RqErJ61W3Jw) |
 
 
 ## レース
