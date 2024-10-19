@@ -26,6 +26,12 @@
 
 の3モデルで走行を実現。
 
+## Hardware
+
+- FaBo JetRacer Kit for Reace Edition
+- Jetson Orin Nano
+- Camera(IMX219) x 1
+
 ## 決勝レースの様子
 
 [![youtube](https://img.youtube.com/vi/_7cuafEg-AM/default.jpg)](https://www.youtube.com/watch?v=_7cuafEg-AM) <br>
