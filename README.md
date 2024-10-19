@@ -14,6 +14,14 @@
 
 - [自動運転ミニカーバトル 2023](https://autonomous-minicar-battle.studio.site/)(2023年11/26(日)開催)
 
+## レース要件
+
+周回が偶数回の場合はショートカットをつかえ、周回が奇数回の場合はそのまま走行。
+
+## 推論の動作
+
+1つのカメラ画像からのInputで、走行モデル(通常走行, ショートカット走行)と環境情報モデルの推論の3つのモデルでJetRacerを拡張。
+
 ## 決勝レースの様子
 
 [![youtube](https://img.youtube.com/vi/_7cuafEg-AM/default.jpg)](https://www.youtube.com/watch?v=_7cuafEg-AM) <br>
