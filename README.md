@@ -16,7 +16,7 @@
 
 ## 決勝レースの様子
 
-[![youtube](https://img.youtube.com/vi/1w_uuEFzZhs/default.jpg)](https://www.youtube.com/watch?v=1w_uuEFzZhs) <br>
+[![youtube](https://img.youtube.com/vi/_7cuafEg-AM/default.jpg)](https://www.youtube.com/watch?v=_7cuafEg-AM) <br>
 
 ## レースで使用したNotebook
 
