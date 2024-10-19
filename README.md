@@ -16,14 +16,14 @@
 
 ## 車体
 
-![Race24](https://github.com/user-attachments/assets/7bb578ab-f954-482d-9dc2-0def9c53e88e)
+![Race24](https://github.com/user-attachments/assets/314b2018-5fbb-48d8-926f-1e0ab66c2c09)
 
 ## Hardware
 
 - FaBo JetRacer Kit for Reace Edition
 - Jetson Orin Nano
 - Camera(IMX219) x 2
-- 
+  
 ## レース要件
 
 コース途中に矢印が表示されるので、矢印側に走行を寄せる。
