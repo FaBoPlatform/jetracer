@@ -14,6 +14,10 @@
 
 - [自動運転ミニカーバトル 2023](https://autonomous-minicar-battle.studio.site/)(2023年11/26(日)開催)
 
+## レース車体
+
+![race2023](https://github.com/user-attachments/assets/ec34dec2-df1b-4495-be53-9afa7f871ef6)
+
 ## レース要件
 
 周回が偶数回の場合はコースをショートカットでき、周回が奇数回の場合はそのまま走行。
