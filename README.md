@@ -28,7 +28,7 @@ Googleブース<br>
 
 ## Hardware
 
-- FaBo JetRacer Kit for Reace Edition
+- FaBo JetRacer Kit for Race Edition
 - Jetson Orin Nano
 - Camera(IMX219) x 2
 - FPV Camera x 1
