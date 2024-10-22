@@ -32,7 +32,6 @@ conda activate jetracer
 
 ```
 conda install pytorch==1.13.1 torchvision==0.14.1 cudatoolkit=11.8 -c pytorch -c nvidia
-conda install opencv
 ```
 
 ```
@@ -43,7 +42,6 @@ pip install -r requirements.txt
 
 ```
 conda install pytorch==1.13.1 torchvision==0.14.1 -c pytorch
-conda install opencv
 ```
 
 ```
