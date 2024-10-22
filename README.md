@@ -31,7 +31,7 @@ conda activate jetracer
 ## パッケージのインストール(Windows)
 
 ```
-conda install pytorch==1.13.1 torchvision==0.14.1 cudatoolkit=11.8 -c pytorch -c nvidia
+conda install pytorch torchvision cudatoolkit=11.8 -c pytorch -c nvidia
 ```
 
 ```
