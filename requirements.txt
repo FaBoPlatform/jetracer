@@ -4,3 +4,4 @@ notebook
 traitlets
 ipyevents
 tqdm
+opencv-python
