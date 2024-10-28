@@ -14,6 +14,12 @@
 
 - [自動運転ミニカーバトル 2024](https://autonomous-minicar-battle.github.io/race-2024/)(2024年10/26(日)開催)
 
+## レース結果
+
+準決勝敗退
+
+https://www.youtube.com/watch?v=1hBd_5ur5Bg
+
 ## 車体
 
 ![Race24](https://github.com/user-attachments/assets/314b2018-5fbb-48d8-926f-1e0ab66c2c09)
