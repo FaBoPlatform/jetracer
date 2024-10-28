@@ -18,7 +18,9 @@
 
 準決勝敗退
 
-https://www.youtube.com/watch?v=1hBd_5ur5Bg
+| レース | 画像 | 
+| --- | --- | 
+| 準決勝 |  [![youtube](https://img.youtube.com/vi/1hBd_5ur5Bg/default.jpg)](https://www.youtube.com/watch?v=1hBd_5ur5Bg) |
 
 ## 車体
 
