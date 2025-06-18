@@ -1,40 +1,24 @@
 #!/usr/bin/env python3
-"""
-Jetson Orin Nano / JetPack 6.2 — OLED ネットワークモニタ
-========================================================
-128×32 SSD1306 OLED に 1 秒毎に次を表示します：
-  • USB ガジェット (l4tbr0, usb*) の IP
-  • 有線 NIC (eth*, en*, eno*) の IP
-  • Wi‑Fi (wl*, wlan*) の IP
-
-ラベル **wifi / eth / usb** は常に表示され、IP が取得できない場合は "N/A" を表示します。
-
-依存ライブラリ
----------------
-  sudo apt update && sudo apt install -y python3-pip i2c-tools
-  pip3 install adafruit-circuitpython-ssd1306 Pillow Jetson.GPIO
-
-実行
-----
-  sudo python3 oled_stats_jetpack62.py
-"""
-from __future__ import annotations
-
 import os
+# -----------------------------------------------------------------------------
+# Jetson.GPIO が Systemd 下で model を見失う場合の対策
+# -----------------------------------------------------------------------------
+os.environ.setdefault("JETSON_MODEL_NAME", "JETSON_ORIN_NANO")
+
 import subprocess
 import time
-from typing import Iterable, List
+from typing import Optional
 
 import Adafruit_SSD1306
-import Jetson.GPIO as GPIO
 from PIL import Image, ImageDraw, ImageFont
+import Jetson.GPIO as GPIO
 
 # -----------------------------------------------------------------------------
-# ネットワークユーティリティ
+# ヘルパ関数
 # -----------------------------------------------------------------------------
 
 def iface_state(name: str) -> str:
-    """Return operstate ('up', 'down', 'unknown', or 'absent')."""
+    """Return operstate text or 'absent'."""
     path = f"/sys/class/net/{name}/operstate"
     if not os.path.exists(path):
         return "absent"
@@ -44,8 +28,8 @@ def iface_state(name: str) -> str:
         return "down"
 
 
-def ip_of(name: str) -> str:
-    """IPv4 アドレスを返す。IF が up で IP 有ならそれを、無ければ 'N/A'。"""
+def get_ip(name: str) -> str:
+    """IPv4 アドレスを返す。up 以外 / 取得失敗時は 'N/A'."""
     if iface_state(name) != "up":
         return "N/A"
     try:
@@ -54,57 +38,30 @@ def ip_of(name: str) -> str:
             shell=True,
             stderr=subprocess.DEVNULL,
         )
-        ip = out.decode().strip()
-        return ip if ip else "N/A"
+        return (out.decode().strip() or "N/A")
     except subprocess.CalledProcessError:
         return "N/A"
 
 
-# -----------------------------------------------------------------------------
-# インタフェース候補生成
-# -----------------------------------------------------------------------------
-
-USB_PREFIXES = ("l4tbr", "usb")        # USB gadget / Ethernet
-ETH_PREFIXES = ("en", "eth", "eno")     # 有線 NIC
-WIFI_PREFIXES = ("wl", "wlan")          # Wi‑Fi
-
-
-def scan_ifaces(prefixes: Iterable[str]) -> List[str]:
-    """Return list of interface names starting with any of prefixes."""
-    try:
-        return [n for n in os.listdir("/sys/class/net") if any(n.startswith(p) for p in prefixes)]
-    except FileNotFoundError:
-        return []
-
-
-def first_ip(prefixes: Iterable[str]) -> str:
-    """Return first non‑N/A IP among interfaces matching prefixes, else 'N/A'."""
-    for iface in scan_ifaces(prefixes):
-        ip = ip_of(iface)
-        if ip != "N/A":
-            return ip
-    return "N/A"
-
-
-# -----------------------------------------------------------------------------
-# OLED / GPIO
-# -----------------------------------------------------------------------------
-
-def detect_i2c_bus() -> int:
+def detect_bus() -> int:
+    """Jetson model -> I2C バス番号"""
     board = GPIO.gpio_pin_data.get_data()[0]
-    if board in ("JETSON_ORIN_NANO", "JETSON_NANO"):
-        return 7  # I2C1 on 40‑pin header
-    if board in ("JETSON_XAVIER", "JETSON_NX"):
-        return 8
-    return 1  # fallback
+    return {"JETSON_ORIN_NANO": 7, "JETSON_NANO": 7, "JETSON_XAVIER": 8, "JETSON_NX": 8}.get(board, 1)
 
+
+def find_iface(prefixes) -> Optional[str]:
+    """/sys/class/net を走査して最初に一致した dev 名を返す"""
+    for dev in os.listdir("/sys/class/net"):
+        if any(dev.startswith(p) for p in prefixes):
+            return dev
+    return None
 
 # -----------------------------------------------------------------------------
 # メインループ
 # -----------------------------------------------------------------------------
 
-def main() -> None:
-    disp = Adafruit_SSD1306.SSD1306_128_32(rst=None, i2c_bus=detect_i2c_bus(), gpio=1)
+def main():
+    disp = Adafruit_SSD1306.SSD1306_128_32(rst=None, i2c_bus=detect_bus(), gpio=1)
     disp.begin()
     disp.clear()
     disp.display()
@@ -115,18 +72,15 @@ def main() -> None:
     font = ImageFont.load_default()
 
     while True:
-        # IP アドレスを取得 (毎秒更新)
-        usb_ip  = first_ip(USB_PREFIXES)
-        eth_ip  = first_ip(ETH_PREFIXES)
-        wifi_ip = first_ip(WIFI_PREFIXES)
-
-        # 画面クリア
         draw.rectangle((0, 0, width, height), outline=0, fill=0)
 
-        # ラベルは常に表示
-        draw.text((0, 0),  f"wifi:{wifi_ip}", font=font, fill=255)
-        draw.text((0, 8),  f"eth: {eth_ip}",  font=font, fill=255)
-        draw.text((0, 16), f"usb: {usb_ip}",  font=font, fill=255)
+        usb_if  = find_iface(["l4tbr0", "usb"])
+        eth_if  = find_iface(["eth", "en", "eno"])
+        wifi_if = find_iface(["wl", "wlan"])
+
+        draw.text((0, 0), f"wifi: {get_ip(wifi_if) if wifi_if else 'N/A'}", font=font, fill=255)
+        draw.text((0, 8), f"eth:  {get_ip(eth_if)  if eth_if  else 'N/A'}", font=font, fill=255)
+        draw.text((0,16), f"usb:  {get_ip(usb_if) if usb_if else 'N/A'}", font=font, fill=255)
 
         disp.image(image)
         disp.display()
