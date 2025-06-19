@@ -15,7 +15,7 @@
 
 ## Jetson Orin Nano Super, JetPack6.2対応
 
-[https://github.com/FaBoPlatform/Jetson_script/blob/main/jetracer/orin_nano/6.2/install.sh](install.sh)を作成して、Jetson Orin Nano Super上でのJetPack6.2での走行テストを始めました。
+[Jetson Orin Nano Super, JetPack6.2 Install Script]([install.sh](https://github.com/FaBoPlatform/Jetson_script/blob/main/jetracer/orin_nano/6.2/install.sh])を作成して、Jetson Orin Nano Super上でのJetPack6.2での走行テストを始めました。
 
 ## 各種ブランチ
 
