@@ -13,6 +13,10 @@
 
 などが挙げられます。
 
+## Jetson Orin Nano Super, JetPack6.2対応
+
+[https://github.com/FaBoPlatform/Jetson_script/blob/main/jetracer/orin_nano/6.2/install.sh](install.sh)を作成して、Jetson Orin Nano Super上でのJetPack6.2での走行テストを始めました。
+
 ## 各種ブランチ
 
 - [AI86](https://github.com/FaBoPlatform/jetracer/tree/AI86) ハンズオン用のNotebook(基本的なNotebook)
