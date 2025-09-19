@@ -13,9 +13,9 @@
 
 などが挙げられます。
 
-## Jetson Orin Nano Super, JetPack6.2対応
+## Jetson Orin Nano Super, JetPack6.2.1対応
 
-[Jetson Orin Nano Super, JetPack6.2 Install Script](https://github.com/FaBoPlatform/Jetson_script/blob/main/jetracer/orin_nano/6.2/install.sh])を作成して、Jetson Orin Nano Super上でのJetPack6.2での走行テストを始めました。
+[Jetson Orin Nano Super, JetPack6.2.1 Install Script](https://github.com/FaBoPlatform/Jetson_script/blob/main/jetracer/orin_nano/6.2.1/install.sh)を作成してください。現在サポート対象のJetPackバージョンは、6.2.1のみとなります。
 
 ## 各種ブランチ
 
