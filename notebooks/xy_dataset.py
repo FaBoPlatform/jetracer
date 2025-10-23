@@ -73,7 +73,9 @@ class XYDataset(torch.utils.data.Dataset):
         image_path = os.path.join(category_dir, filename)
         cv2.imwrite(image_path, image)
         self.refresh()
-        
+
+        return image_path
+
     def get_count(self, category):
         i = 0
         for a in self.annotations:
