@@ -65,9 +65,8 @@ class XYDataset(torch.utils.data.Dataset):
         
     def save_entry(self, category, image, x, y):
         category_dir = os.path.join(self.directory, category)
-        if not os.path.exists(category_dir):
-            subprocess.call(['mkdir', '-p', category_dir])
-            
+        os.makedirs(category_dir, exist_ok=True)
+
         filename = '%d_%d_%s.jpg' % (x, y, str(uuid.uuid1()))
         
         image_path = os.path.join(category_dir, filename)

@@ -49,10 +49,9 @@ class ImageClassificationDataset(torch.utils.data.Dataset):
             
         filename = str(uuid.uuid1()) + '.jpg'
         category_directory = os.path.join(self.directory, category)
-        
-        if not os.path.exists(category_directory):
-            subprocess.call(['mkdir', '-p', category_directory])
-            
+
+        os.makedirs(category_directory, exist_ok=True)
+
         image_path = os.path.join(category_directory, filename)
         cv2.imwrite(image_path, image)
         self._refresh()
