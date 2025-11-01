@@ -1,4 +1,5 @@
 import os
+from datetime import datetime, timezone
 from enum import Enum, auto
 
 
@@ -41,3 +42,9 @@ def asset_root():
     運用、試験目線でのアセット切り替えに利用できる。
     """
     return os.path.abspath(os.getenv("FABO_JETRACER_ASSET_ROOT", "."))
+
+
+def format_epoch(epoch: float, tz=timezone.utc):
+    """UNIX Epoch秒を YYYY/mm/ddThh:mm:ss.zzzzzz 形式の文字列に変換"""
+    dt = datetime.fromtimestamp(epoch, tz=tz)
+    return dt.strftime("%Y/%m/%dT%H:%M:%S.%f%z")
