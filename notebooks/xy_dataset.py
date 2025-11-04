@@ -7,6 +7,8 @@ import torch.utils.data
 import subprocess
 import cv2
 import numpy as np
+import shutil
+from pathlib import Path
 
 
 class XYDataset(torch.utils.data.Dataset):
@@ -70,7 +72,12 @@ class XYDataset(torch.utils.data.Dataset):
         filename = '%d_%d_%s.jpg' % (x, y, str(uuid.uuid1()))
         
         image_path = os.path.join(category_dir, filename)
-        cv2.imwrite(image_path, image)
+        if any(isinstance(image, x) for x in [str, Path]):
+            # lossless
+            shutil.copy2(image, image_path)
+        else:
+            # lossy
+            cv2.imwrite(image_path, image)
         self.refresh()
 
         return image_path

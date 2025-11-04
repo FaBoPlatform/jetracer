@@ -7,6 +7,8 @@ import cv2
 import os
 import uuid
 import subprocess
+import shutil
+from pathlib import Path
 
 
 class ImageClassificationDataset(torch.utils.data.Dataset):
@@ -53,7 +55,12 @@ class ImageClassificationDataset(torch.utils.data.Dataset):
         os.makedirs(category_directory, exist_ok=True)
 
         image_path = os.path.join(category_directory, filename)
-        cv2.imwrite(image_path, image)
+        if any(isinstance(image, x) for x in [str, Path]):
+            # lossless
+            shutil.copy2(image, image_path)
+        else:
+            # lossy
+            cv2.imwrite(image_path, image)
         self._refresh()
         return image_path
     
