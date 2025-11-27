@@ -1,3 +1,4 @@
+import os
 from enum import Enum, auto
 
 class EnvironmentCategory(Enum):
@@ -31,3 +32,10 @@ class EnvironmentCategory(Enum):
 
     def __str__(self):
         return self.name
+
+def asset_root():
+    """
+    camera/ や model/ などのアセットのルートディレクトリを返却する。
+    運用、試験目線でのアセット切り替えに利用できる。
+    """
+    return os.path.abspath(os.getenv("FABO_JETRACER_ASSET_ROOT", "."))
