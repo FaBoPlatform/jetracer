@@ -50,10 +50,12 @@ def detect_bus() -> int:
 
 
 def find_iface(prefixes) -> Optional[str]:
-    """/sys/class/net を走査して最初に一致した dev 名を返す"""
-    for dev in os.listdir("/sys/class/net"):
-        if any(dev.startswith(p) for p in prefixes):
-            return dev
+    """prefixes の優先順に /sys/class/net を探して dev 名を返す"""
+    devs = sorted(os.listdir("/sys/class/net"))
+    for pfx in prefixes:
+        for dev in devs:
+            if dev.startswith(pfx):
+                return dev
     return None
 
 # -----------------------------------------------------------------------------
