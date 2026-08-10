@@ -50,7 +50,10 @@ class XYDataset(torch.utils.data.Dataset):
         self.annotations = []
         for category in self.categories:
             category_index = self.categories.index(category)
-            for image_path in glob.glob(os.path.join(self.directory, category, '*.jpg')):
+            # ここでファイルのリストを取得し、最終変更日時でソート
+            image_paths = sorted(glob.glob(os.path.join(self.directory, category, '*.jpg')), 
+                                 key=os.path.getmtime)
+            for image_path in image_paths:
                 x, y = self._parse(image_path)
                 self.annotations += [{
                     'image_path': image_path,

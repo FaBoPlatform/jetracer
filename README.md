@@ -1,71 +1,77 @@
-# JetRacer
+# FaBo JetRacer Kit
 
-<img src="https://user-images.githubusercontent.com/4212806/67442981-ce459e00-f5b7-11e9-9c8a-14ab360decb8.gif" height=256>
+このレポジトリは、[NVIDIA-AI-IOT/jetracer](http://github.com/NVIDIA-AI-IOT/jetracer)のForkプロジェクトです。
 
-JetRacer is an autonomous AI racecar using NVIDIA Jetson Nano.  With JetRacer you will
+教育現場への導入を目的に、株式会社FaBoがキット化し、改良したバージョンとなります。　
 
-* Go fast - Optimize for high framerates to move at high speeds
+主な修正点としては
 
-* Have fun - Follow examples and program interactively from your web browser
+- ハンズオンにも対応したNotebook
+- TAMIYA社 TT-02向けに各種設定値の修正を可能に
+- 学習方法等の工夫をおこなったノートブック
+- レースにも対応可能な拡張
 
-By building and experimenting with JetRacer you will create fast AI pipelines and push the boundaries of speed.
+などが挙げられます。
 
-To get started, follow the [setup](#setup) below.
-
-## Cars
-
-There are two different JetRacer cars that you can build.  They differ primarily in size and speed.  Which one to pick depends on your use case
-
-|  Latrax Rally | Tamiya TT02 |
-|--------------|---------------|
-| <img src="https://user-images.githubusercontent.com/25759564/67250038-b1c22e00-f41e-11e9-82d2-bbb17526310b.jpg" width=256>  | <img src="https://user-images.githubusercontent.com/25759564/67250039-b1c22e00-f41e-11e9-931f-98c1729550d0.jpg" width=320>  | 
-| 1/18th scale |  1/10th scale |
-| Moderate Speed  |  High Speed  |
-| ~$400 total build cost | ~$600 total build cost |
-| Compact and portable |  Large and easy to modify |
-| Soldering required |  No soldering required  |
-| Base car pre-assembled | Base car assembly required |
-
-If you have any questions, please reach out by [creating an issue](../..//issues).
+## Jetson Orin Nano Super, JetPack7.2対応
 
 
-## Examples
+## 各種ブランチ
 
-JetRacer comes with a couple examples to get you up and running.  The examples are in the format of Jupyter Notebooks, which are interactive documents which combine text, code, and visualization.  Once you've completed the notebooks, start tweaking them to create your own racing software!
+- [AI86](https://github.com/FaBoPlatform/jetracer/tree/AI86) ハンズオン用のNotebook(基本的なNotebook)
+- [Desktop](https://github.com/FaBoPlatform/jetracer/tree/Desktop) Desktop用 Notebook(Windows, OSXにも対応)
+- [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) ミニカーバトル2024用 Notebook
+- [Next24](https://github.com/FaBoPlatform/jetracer/tree/Next24) Google Next 2024@ラスベガス 展示デモ
+- [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) ミニカーバトル2023用 Notebook
+  
+## 車体
 
-### Example 1 - Basic motion
+|  [FaBo JetRacer Kit](https://fabo.store/collections/jetracer) |
+|--------------|
+| <img src="https://faboplatform.github.io/JetracerDocs/img/jetracer1.jpg" width=256>  | 
+| 1/10th スケール |
+| ベース車両は、TAMIYA社　TT-02|
 
-In this example you'll learn to progam JetRacer programatically from your web browser.  Learn more in the [examples](docs/examples.md) documentation.
+## チュートリアル
 
-<img src="https://user-images.githubusercontent.com/4212806/60383497-68d90a80-9a26-11e9-9a18-778b7d3a3221.gif" height=300/>
+ドキュメント
+- [FaBo JetRacer Docs](https://faboplatform.github.io/JetracerDocs/)
 
-### Example 2 - Road following
+最初に実施するDocs
+- [QuickStart](https://faboplatform.github.io/JetracerDocs/quick/01.intro/)
 
-In this example, you'll teach JetRacer how to follow a road using AI.  After training the neural network using the [interactive training notebook](notebooks/interactive_regression.ipynb), you'll optimize the model using NVIDIA TensorRT and deploy for a live demo. Learn more in the [examples](docs/examples.md).
+動画チュートリアル(YouTube)
+- [1.PWMの設定](https://www.youtube.com/watch?v=n5FJrSu17x0)
+- [2.アノテーションと学習](https://www.youtube.com/watch?v=gz_bV-wJAO0&t=7s)
+- [3.TensorRTへの変換](https://www.youtube.com/watch?v=zbNoygm1JSQ)
+- [4.自動走行](https://www.youtube.com/watch?v=YQ8U5KHhLLA)
 
-<img src="https://user-images.githubusercontent.com/4212806/60383389-bd7b8600-9a24-11e9-9f64-926e5edb52cc.gif" height=300/>
+## Cloudでの学習
 
-## Setup
+Colabでの学習用Notebook<br>
+- [FaBo JetRacerCloud](https://colab.research.google.com/drive/1GbDrNiosTKSJNOJiCiVgv6V8X-0GDBfW?usp=sharing)
 
-To get started with JetRacer, follow these steps
+## SDカード
 
-1. Order parts from the bill of materials
+Jetson Orin Nano用環境構築Script
+- [Orin Nano JetPack 5.1.4 SD](https://github.com/FaBoPlatform/Jetson_script/blob/main/aicar/orin_nano/install.sh)
 
-    - [Latrax version](docs/latrax/bill_of_materials.md) 
-    - [Tamiya version](docs/tamiya/bill_of_materials.md) 
+Jetson Nano(4GB用)SDカードイメージ
+- [FaBo JetRacer Kit 1.0 for Jetpack4.6.1](https://drive.google.com/file/d/1tZ5bNfE9gJ67E_HGm_hXMXGRFWvKaoTe/view?usp=sharing)
+- [FaBo JetRacer Kit 1.0 for Jetpack4.5.1](https://drive.google.com/file/d/1-MvsHPYKcunSOiaXaXR15DQP6QMJJhEm/view?usp=sharing)
 
-2. Follow the hardware setup
+## 展示会デモ
 
-    - [Latrax version](docs/latrax/hardware_setup.md) 
-    - [Tamiya version](docs/tamiya/hardware_setup.md) 
+| Branch | 車体 | 説明 | 関連動画 |
+| --- | --- | --- | --- |
+| [Next24](https://github.com/FaBoPlatform/jetracer/tree/Next24) | ![next24](https://github.com/user-attachments/assets/659a907a-91f2-4b12-8f74-689025d2b5fa) | Google Next 2024 Googleブースデモ |  [![youtube](https://img.youtube.com/vi/cO0iVCv9cfI/default.jpg)](https://www.youtube.com/watch?v=cO0iVCv9cfI)  [![youtube](https://img.youtube.com/vi/pLzW4NR5-y8/default.jpg)](https://www.youtube.com/watch?v=pLzW4NR5-y8) [![youtube](https://img.youtube.com/vi/RqErJ61W3Jw/default.jpg)](https://www.youtube.com/watch?v=RqErJ61W3Jw) |
 
-3. Follow the [software setup](docs/software_setup.md)
-4. Run through the [examples](docs/examples.md)
 
-## See also
 
-* [JetBot](http://github.com/NVIDIA-AI-IOT/jetbot) - An educational AI robot based on NVIDIA Jetson Nano
+## レース
 
-* [JetCam](http://github.com/NVIDIA-AI-IOT/jetcam) - An easy to use Python camera interface for NVIDIA Jetson
-* [JetCard](http://github.com/NVIDIA-AI-IOT/jetcard) - An SD card image for web programming AI projects with NVIDIA Jetson Nano
-* [torch2trt](http://github.com/NVIDIA-AI-IOT/torch2trt) - An easy to use PyTorch to TensorRT converter
+
+| Branch | 車体 | 説明 | 関連動画 |
+| --- | --- | --- | ---|
+| [Race24](https://github.com/FaBoPlatform/jetracer/tree/Race24) | ![race2024](https://github.com/user-attachments/assets/3c8896b0-912f-4b26-9bd7-84e48dd82c82) | ミニカーバトル2024用 Notebook | [![youtube](https://img.youtube.com/vi/1hBd_5ur5Bg/default.jpg)](https://www.youtube.com/watch?v=1hBd_5ur5Bg) [![youtube](https://img.youtube.com/vi/xm2S_2Yv_uQ/default.jpg)](https://www.youtube.com/watch?v=xm2S_2Yv_uQ) |
+| [Race23](https://github.com/FaBoPlatform/jetracer/tree/Race23) | ![race2023](https://github.com/user-attachments/assets/a48855bb-eff3-4e9d-8de7-3ff107afc37d) | ミニカーバトル2023用 Notebook | [![youtube](https://img.youtube.com/vi/_7cuafEg-AM/default.jpg)](https://www.youtube.com/watch?v=_7cuafEg-AM) |
