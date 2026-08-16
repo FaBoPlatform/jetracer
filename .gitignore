@@ -1,1 +1,11 @@
 .DS_Store
+__pycache__/
+.ipynb_checkpoints/
+notebooks/camera/
+notebooks/dataset/
+notebooks/model/
+notebooks/model_trt/
+notebooks/video/
+notebooks/pwm_params.json
+notebooks/raw_params.json
+*.bak*
