@@ -9,3 +9,4 @@ notebooks/video/
 notebooks/pwm_params.json
 notebooks/raw_params.json
 *.bak*
+logs/
